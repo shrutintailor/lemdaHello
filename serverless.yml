@@ -1,0 +1,27 @@
+service: hello-lemda
+
+provider: 
+  name: aws
+  runtime: nodejs22.x
+  region: ap-south-1
+
+functions:
+  hello:
+    handler: handler.helloWorld
+    events:
+      - http:
+          path: helloWorld
+          method: get
+
+plugins:
+  - serverless-esbuild
+
+custom:
+  esbuild:
+    bundle: true
+    minify: false
+    sourcemap: true
+    target: node22
+    platform: node
+    exclude: ['aws-sdk']
+    
