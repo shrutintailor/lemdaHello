@@ -31,5 +31,5 @@ This project demonstrates how to build and deploy an AWS Lambda function using *
 - Serverless Framework installed globally  
   ```bash
   npm install -g
-  set aws config # set your aws access token and secrete
+  aws configure # set your aws access token and secrete
   serverless deploy
